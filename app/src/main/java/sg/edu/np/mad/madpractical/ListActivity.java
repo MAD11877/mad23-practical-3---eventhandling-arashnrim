@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class ListActivity extends AppCompatActivity {
@@ -36,6 +37,13 @@ public class ListActivity extends AppCompatActivity {
 
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
+        });
+
+        // Adds an event listener to messageGroupButton to start MessageActivity
+        Button messageGroupButton = (Button) findViewById(R.id.messageGroupButton);
+        messageGroupButton.setOnClickListener(v -> {
+            Intent messageActivity = new Intent(this, MessageGroupActivity.class);
+            startActivity(messageActivity);
         });
     }
 }
